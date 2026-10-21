@@ -20,13 +20,16 @@
 #include <types/viz.h>
 #include <tennsix/support/ludec.h>
 
-template <typename PP, typename T_, size_t size_, size_t cosize_, size_t prosize_ = 1>
+template <typename PP_, typename T_, size_t size_, size_t cosize_, size_t prosize_ = 1>
 class Super {
     friend class TSuper;
 
 public: // types:
 
     using T = T_;
+    using PP = PP_;
+    using Scalar = PP::Scalar;
+    using Under = PP::Under;
 
 public: // fields:
 
@@ -45,7 +48,11 @@ protected: // fields:
 
 public: // ctor:
 
-    explicit Super(const PP & val = PP::zero())
+   Super() {
+       // do nothing - no stack allocation.
+    }
+
+    explicit Super(const PP & val) // = PP::zero())
     {
         for (int i = 0; i < data_size; ++i) {
             data[i] = val;
@@ -423,6 +430,32 @@ public: // artifacts:
     const PP & operator[](DGCALC::IPoint<2> index) const {
         return data[cosize*index.i[0] + index.i[1]];
     }
+
+    template <size_t dim = dimension>
+    requires (dim > 2)
+   Scalar & operator[](DGCALC::IPoint<dimension> index) {
+      if constexpr (cosize == 1) {
+         // todo - stub
+         return reinterpret_cast<Scalar&>(data);
+      }
+      else {
+         // todo - stub
+         return reinterpret_cast<Scalar&>(data);;
+      }
+   }
+
+   template <size_t dim = dimension>
+   requires (dim > 2)
+   const Scalar & operator[](DGCALC::IPoint<dimension> index) const {
+      if constexpr (cosize == 1) {
+         // todo - stub
+         return Scalar::unit();
+      }
+      else {
+         // todo - stub
+         return Scalar::unit();
+      }
+   }
 
 public: // static methods:
 

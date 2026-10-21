@@ -528,4 +528,11 @@ public: // API:
         cout << "colmat % v2 = " << (colmat % v2).str() << endl;
     }
 
+    static void Tgeneral_subscript() {
+       using Arr = Matrix<Matrix<double754, 5, 4>, 3, 2>;
+       Arr arr;
+       arr[{1,2,1,2}] = double754(42);
+       cout << arr.str() << endl;
+    }
+
 };

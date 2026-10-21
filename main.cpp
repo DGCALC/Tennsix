@@ -14,7 +14,7 @@ int main() {
 //    TSuper::Tstr_dat_matrix();
 //    TSuper::Tdotproduct();
 //    TSuper::Tmultiply();
-    TSuper::Tunit_length();
+//    TSuper::Tunit_length();
 //    TSuper::Tcross_product();
 //    TSuper::Ttridiagonalsolve();
 //    TSuper::TSuperLUdec();
@@ -23,7 +23,7 @@ int main() {
 //    TSuper::Tblockmultiply();
 //    TSuper::Tblockinverse();
 //    TSuper::Tcolumnmatrix();
-
+   TSuper::Tgeneral_subscript();
 
 //    TSeries::Tdryrun();
 //    TFeatureSurface::Tdryrun();
