@@ -676,6 +676,11 @@ public: // printing:
         return str_di();
     }
 
+   friend std::ostream& operator<<(std::ostream& os, const Super& s) {
+      os <<  s.str();
+      return os;
+   }
+
 public: // viz:
 
     // visualization method

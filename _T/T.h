@@ -7,11 +7,6 @@
 
 #include <Tsuper.h>
 
-#include <viz/Tseries.h>
-
-#include <viz/Tfeaturesurface.h>
-
-#include <viz/Tmatrixviz.h>
+//#include <viz/Tviz.h>
 
 
-#include <viz/Tfeaturesurface_pointcloud.h>
